@@ -89,8 +89,7 @@ public class MenuThread extends Thread {
 
                     products = new ArrayList<Invoice.Product>();
 
-                    JsonArray jsonArray = jsonObject.get("invoices").getAsJsonObject().get("products").
-                            getAsJsonObject().get("product").getAsJsonArray();
+                    JsonArray jsonArray = jsonObject.get("invoice").getAsJsonObject().get("products").getAsJsonObject().get("product").getAsJsonArray();
 
                     for (JsonElement element : jsonArray) {
                         JsonObject elementAsJsonObject = element.getAsJsonObject();
@@ -156,7 +155,7 @@ public class MenuThread extends Thread {
             }
         }
 
-        return "The total amount for" + invoices.size() + "invoices is $" + String.format("%.2f", total) + "\n";
+        return "The total amount for " + invoices.size() + " invoices is $" + String.format("%.2f", total) + "\n";
     }
 
     private void delete() {

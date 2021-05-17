@@ -60,7 +60,7 @@ public class EchoThread extends Thread {
 
                 bufferedWriter.close();
 
-                System.out.println("File saved as: " + saveAs);
+                System.out.println("File saved as: " +time  + saveAs);
 
             }
         } catch (IOException e) {
